@@ -11,3 +11,8 @@ GROUP BY p.product_id;
 
 
 select date_id , make_name ,count(DISTINCT lead_id) as unique_leads,count(DISTINCT partner_id) as unique_partners from DailySales group by 1,2;
+
+
+1148. Article Views I
+1149. select distinct author_id as id from Views where author_id=viewer_id order by author_id  ;
+
