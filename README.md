@@ -16,3 +16,15 @@ select date_id , make_name ,count(DISTINCT lead_id) as unique_leads,count(DISTIN
 1148. Article Views I
 1149. select distinct author_id as id from Views where author_id=viewer_id order by author_id  ;
 
+
+178. Rank Scores
+SELECT 
+    s1.score,
+    (
+        SELECT COUNT(DISTINCT s2.score)
+        FROM Scores s2
+        WHERE s2.score >= s1.score
+    ) AS `rank`
+FROM Scores s1
+ORDER BY s1.score DESC;
+
